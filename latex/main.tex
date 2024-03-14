@@ -41,21 +41,23 @@
 
 % This Sample thesis requires \LaTeX2e
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
-\ProvidesFile{ubcsample.tex}[2015/05/31 v1.72 ^^J
- University of British Columbia Sample Thesis]
+% \ProvidesFile{ubcsample.tex}[2015/05/31 v1.72 ^^J
+%  University of British Columbia Sample Thesis]
+
 % This is the \documentclass[]{} command.  The manditory argument
 % specifies the "flavour" of thesis (ubcthesis for UBC).  The
 % optional arguments (in []) specify options that affect how the
 % thesis is displayed.  Please see the ubcthesis documentation for
 % details about the options.
-\documentclass[msc,oneside]{ubcthesis}
+\documentclass[msc,oneside,noheadline]{ubcthesis} 
+% draft
+% REMOVE4HANDIN: remove draft 
 %
 % To compile this sample thesis, issue the following commands:
 % latex ubcsample
 % bibtex ubcsample
 % latex ubcsample
-% latex ubcsample
-% latex ubcsample
+
 %
 % To view use xdvi (on unix systems):
 % xdvi ubcsample.dvi
@@ -220,14 +222,73 @@
 % put the URL's in a typewriter font but not link them.
 %\newcommand\url[1]{\texttt{#1}}
 
+
+\graphicspath{{figures/}}  % Set root dir for figures (can add more paths to search)
+% \usepackage[backend=biber, style=ieee, doi=true, url=false]{biblatex}
+% \addbibresource{bibliography.bib}
+% \usepackage[backend=biber, style=ieee, doi=true, url=false]{biblatex}
+
+
+
+% Included in the preamble to provide shortcuts to frequently used equations/symbols etc
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{braket}
+\usepackage{graphicx}
+\usepackage{upgreek}  % Used in methods for upright \mu even in math mode
+\usepackage{soul}  % for highlighting etc
+\usepackage[version=4]{mhchem}  % For chemical formulas
+% \usepackage{physics}  % Apparently this is a bad package to use... https://tex.stackexchange.com/questions/471532/alternatives-to-the-physics-package
+\usepackage{placeins}
+\usepackage{bm} % For bold math
+\setlength{\emergencystretch}{3pt}  % Fix overfull hbox stuff (https://tex.stackexchange.com/questions/111948/what-is-a-overfull-hbox-9-89561pt-too-wide)
+% \usepackage{hyperref}
+% \usepackage[backend=biber, doi=true]{biblatex}
+% \addbibresource{bibliography.bib}
+\usepackage{pdfpages}  % allow adding multiple PDF pages to appendix
+
+\usepackage{url}  % used by natbib for linebreaks in long url/doi 
+
+\newcommand{\comment}[1]{{\color{cyan}#1}}   
+
+\usepackage{siunitx}  % For quantities and SI units
+\sisetup{
+    % detect-family,
+    list-units      = single,  % default is repeat
+    range-units     = single,  % default is repeat
+    %%  NOTE: Have to be careful that these work in both math and normal mode if changed
+    range-phrase    = {\text{ to }},
+    list-separator  = {\text{,} },
+    % list-final-separator = {\text{ and }},
+    list-pair-separator= {\text{ and }},  % Applies when only list of 2
+    per-mode        = fraction,  % Default is power
+    % exponent-product = \cdot
+    }
+
+% Prevent footnotes  being split over several pages 
+\interfootnotelinepenalty=10000
+\let\qty\SI  % Overleaf has old version siunitx, newer version defines \qty the same as \SI
+% apparently overleaf may use an old version of siunitx that does not define \unit, this fixes that issue one way or another
+% https://tex.stackexchange.com/questions/601428/unit-macro-not-working-on-the-siunitx-package
+\ifdefined\unit\else
+  \ifdefined\NewCommandCopy
+    \NewCommandCopy\unit\si
+  \else
+    \NewDocumentCommand\unit{O{}m}{\si[#1]{#2}}
+  \fi
+\fi
+
+
+
+
 %******** setspace *******************************
 % The setspace package allows you to manually set the spacing of the
 % file.  UBC may require 1.5 spacing for microfilming of theses.  In
 % this case you may obtain this by including this package and issuing
 % one of the following commands:
-%\usepackage{setspace}
+\usepackage{setspace}
 %\singlespacing
-%\onehalfspacing
+\onehalfspacing
 %\doublespacing
 
 % These commands are optional.  The defaults are shown.  You only
@@ -242,9 +303,9 @@
 \institutionaddress{Vancouver}
 
 % You can issue as many of these as you have...
-\previousdegree{B.Sc., The University of British Columbia, 1999}
-\previousdegree{M.Sc., The University of British Columbia, 2001}
-\previousdegree{Ph.D., Massachusetts Institute of Technology, 2005}
+\previousdegree{B.Sc., The University of British Columbia, 2022}
+% \previousdegree{M.Sc., The University of British Columbia, 2001}
+% \previousdegree{Ph.D., Massachusetts Institute of Technology, 2005}
 
 % You can override the option setting here.
 % \degreetitle{Jack of All Trades}
@@ -252,8 +313,8 @@
 % These commands are required.
 \title{A Sample UBC Thesis}
 \subtitle{With a Subtitle}
-\author{Michael M$^{\rm c}$Neil Forbes}
-\copyrightyear{2000}
+\author{Johann Peter Drayne}
+\copyrightyear{2024}
 \submitdate{\monthname\ \number\year} % The "\ " is required after
                                       % \monthname to prevent the
                                       % command from eating the space.
@@ -442,16 +503,7 @@ This is the place to thank professional colleagues and people who have
 given you the most help during the course of your graduate work.
 
 \chapter{Dedication} %% Optional
-The dedication is usually quite short, and is a personal rather than
-an academic recognition.  The \emph{Dedication} does not have to be
-titled, but it must appear in the table of contents.  If you want to
-skip the chapter title but still enter it into the Table of Contents,
-use this command \verb|\chapter[Dedication]{}|.
-
-Note that this section is the last of the preliminary pages (with
-lowercase Roman numeral page numbers).  It must be placed
-\emph{before} the \verb|\mainmatter| command.  After that, Arabic
-numbered pages will begin.
+A short dedication.
 
 % Any other unusual prefactory material should come here before the
 % main body.
@@ -461,6 +513,13 @@ numbered pages will begin.
 
 % Parts are the largest structural units, but are optional.
 %\part{Thesis}
+
+
+\include{chapters/intro}
+\include{chapters/device_background}
+\include{chapters/kondo_conductance}
+\include{chapters/mixed_valence_conductance}
+\include{chapters/conclusion}
 
 % Chapters are the next main unit.
 \chapter{This is a Chapter}
@@ -477,7 +536,7 @@ see how much it is indented by.
 \subsection{This is a Subsection}
 Here is an example of a citation: \cite{Forbes:2006ba}.  The actual
 form of the citation is governed by the bibliographystyle.  These
-citations are maintained in a BIBTeX file \texttt{sample.bib}.  You
+citations are maintained in a BIBTeX file \texttt{bibliography.bib}.  You
 could type these directly into the file.  For an example of the format
 to use look at the file \texttt{ubcsample.bbl} after you compile this
 file.\footnote{Here is another footnote.}
@@ -655,7 +714,7 @@ You might want a list for example:\footnote{Here is a footnote in a
 %% psfrag: comment the following line if not using the psfrag package
     \psfrag{pie makes me happy!}{$\pi$ makes me happy!}
 %% includegraphics: comment the following if not using the graphicx package
-    \includegraphics[width=0.4\textwidth]{fig}
+    \includegraphics[width=0.4\textwidth]{ch1/KondoEntropy_Thesis_Dot v4}
     \caption[Happy Face: figure example.]{\label{fig:happy} This is a figure of
       a happy face with a \texttt{psfrag} replacement.  The original figure
       (drawn in xfig and exported to a .eps file) has the text ``pie makes me
@@ -669,6 +728,9 @@ You might want a list for example:\footnote{Here is a footnote in a
   \end{center}
 \end{figure}
 \afterpage{\clearpage}
+
+
+
 Here is an example of a figure environment.
 Perhaps I should say that the example of a figure can be seen in
 Figure~\ref{fig:happy}.  Figure placement can be tricky with \LaTeX\
@@ -812,20 +874,7 @@ Note that if you use subsections or further divisions under an
 unnumbered section, then you should make them unnumbered as well
 otherwise you will end up with zeros in the section numbering.
 
-\chapter{Landscape Mode}
-The landscape mode allows you to rotate a page through 90 degrees.  It
-is generally not a good idea to make the chapter heading landscape,
-but it can be useful for long tables etc.
 
-\begin{landscape}
-  This text should appear rotated, allowing for formatting of very
-  wide tables etc.  Note that this might only work after you convert
-  the \texttt{dvi} file to a postscript (\texttt{ps}) or \texttt{pdf}
-  file using \texttt{dvips} or \texttt{dvipdf} etc.  This feature is
-  provided by the \verb|lscape| and the \verb|pdflscape| packages.
-  The latter is preferred if it works as it also rotates the pages in
-  the pdf file for easier viewing.
-\end{landscape}
 
 %% This file is setup to use a bibtex file sample.bib and uses the
 %% plain style.  Other styles may be used depending on the conventions
@@ -833,7 +882,9 @@ but it can be useful for long tables etc.
 %%
 %%% Note: the bibliography must come before the appendices.
 \bibliographystyle{plain}
-\bibliography{sample}
+\bibliography{bibliography}
+% % \usepackage[backend=biber, style=ieee, doi=true, url=false]{biblatex}
+% \addbibresource{bibliography.bib}
 
 %% Use this to reset the appendix counter.  Note that the FoGS
 %% requires that the word ``Appendices'' appear in the table of
