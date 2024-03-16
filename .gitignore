@@ -1,0 +1,8 @@
+**/__pycache__
+**/.vscode
+**/.ipynb_checkpoints
+*.ipynb
+*.DS_Store
+**/figures/KEYNOTE_figures/**
+**/figures/IGOR_figures/**
+
