@@ -50,7 +50,7 @@ In the temperature broadened regime $\mathrm{\Gamma/T} < 1$ and leverarm are dec
 The fitting range is chosen to be the full width at $90\%$ the maximum conductance. This removes any bias of picking a 'good' fitting range. 
 
 \subsection{Fitting Charge Transitions to NRG}
-The global fit to conductance is used to determine $\mathrm{\Gamma/T}$ and leverarm, which are then used in the fits to the charge transitions. Each charge transition is fit separately where the value of $\mathrm{\Gamma/T}$ and leverarm from the conductance global fits are held fixed. All other parameters (amplitude, x-offset, y-offset, linear and occupation dependant linear) are allowed to freely vary Fig.~\ref{fig:ch3/cond_ct_gf}\textbf{b}. The fitting range of the charge transitions is maximised up-to but excluding charge jumps.
+The global fit to conductance is used to determine the parameters $\mathrm{\Gamma/T}$ and leverarm, which are then used in the fits to the charge transitions. Each charge transition is fit separately, where $\mathrm{\Gamma/T}$ and leverarm values determined from the conductance global fits are held fixed. All other parameters (amplitude, x-offset, y-offset, linear and occupation dependant linear) are allowed to freely vary Fig.~\ref{fig:ch3/cond_ct_gf}\textbf{b}. The fitting range of the charge transitions is maximised up-to, but excluding charge jumps.
 
 
 \subsection{Determining Occupation from Charge Transitions}
@@ -65,16 +65,17 @@ The global fit to conductance is used to determine $\mathrm{\Gamma/T}$ and lever
   \end{center}
 \end{figure}
 
-The charge transition cannot be used as a reference to compare with conductance. However, the charge transition can be turned into an occupation which can be used as a reference to compare conductance enhancement between dot settings. The fit parameters from the NRG fit to the charge transition are used to remove relevant terms. The current offset (y-offset) and linear term are removed trivially. The occupation dependant linear term is removed using by multiplying this linear term with the correct NRG occupation row corresponding to $\mathrm{\Gamma/k_BT}$. Finally, the charge transition is scaled by the amplitude. The corresponding NRG at the correct $\mathrm{\Gamma/k_BT}$ only has to be shifted by the x-offset as it is already in units of occupation Fig.~\ref{fig:ch3/cond_vs_occ_gf}\textbf{a}.
+The charge transition cannot be used as a reference to compare with conductance due to changing amplitude and linear terms with a change in dot settings. However, the charge transition can be turned into an occupation which allows for comparison of conductance enhancement between dot settings. The fit parameters from the NRG fit to the charge transition are used to remove relevant terms. The current offset (y-offset) and linear term are removed trivially. The occupation dependant linear term is removed using by multiplying this linear term with the correct NRG occupation row corresponding to $\mathrm{\Gamma/k_BT}$. Lastly, the charge transition is scaled by the amplitude. The NRG corresponding to the correct $\mathrm{\Gamma/k_BT}$ only has to be shifted by the x-offset as it is already in units of occupation Fig.~\ref{fig:ch3/cond_vs_occ_gf}\textbf{a}.
 
 
 \subsection{Conductance versus Occupation Varying Temperature}
+The data is then plotted as conductance versus occupation Fig.~\ref{fig:ch3/cond_vs_occ_gf}\textbf{b}. As the conductance and occupation data are fit to different ranges, it is important to ensure conductance and occupation data points plotted against each other correspond to the same gate voltage. Plotting conductance versus occupation solves the issue of transitions shifting with respect to the gate voltage due to entropy or charge motion. Conductance enhancement due to Kondo can be seen from a shift of the conductance maximum to occupation greater than 0.5 (N $>0.5$). This shift in the conductance maximum indicates that even as the dot energy of the quantum dot fall below the energy level of the leads, there is enhanced conductance due to the formation of a Kondo singlet.  In Fig.~\ref{fig:ch3/cond_vs_occ_gf}\textbf{b}, as the temperature is lowered, the conductance maximum shifts to higher occupation. As the Kondo temperature drops the further away from charge degeneracy (N $=0.5$), lower system temperatures ensure the Kondo singlet is still formed further away from (N $=0.5$). The NRG conductance versus occupation in Fig.~\ref{fig:ch3/cond_vs_occ_gf}\textbf{b} is the un-scaled NRG provided by the theorists corresponding to $\mathrm{\Gamma/k_BT}$. There is good agreement between the data and NRG at each of the temperatures. 
 
 
 
 
+\section{Conductance versus Occupation Varying Coupling Strength}
 
-\section{Conductance versus Occupation Varying Coupling}
 
 \begin{figure}[!bht]
   \begin{center}
@@ -88,10 +89,28 @@ The charge transition cannot be used as a reference to compare with conductance.
 \end{figure}
 
 
+In Fig.~\ref{fig:ch3/cond_vs_occ_gf}\textbf{b} we confirmed the Kondo enhancement depends on the temperature of the system. Where at high temperatures $\mathrm{T>T_k}$ there is no Kondo singlet and so the conductance maximum is near $\mathrm{N} = 0.5$. But at low temperatures $\mathrm{T<T_k}$ a Kondo singlet is formed and the conductance maximum is at $\mathrm{N} > 0.5$. The Kondo temperature depends on how close the dot energy is to the energy level of the leads. As the dot energy gets close to the leads, the Kondo temperature rises. However, the Kondo temperature also depends on the strength of coupling between the quantum dot and leads Eq.~\ref{eq:kondo_temp}. Where strongly coupled quantum dots have larger Kondo temperatures and hence the conductance maximum is expected occur at larger occupation than in weakly coupled quantum dots.  
 
+Fig.~\ref{fig:ch3/cond_occ_couplingstrength} shows \qty{20}{mK} traces of conductance versus occupation at three different coupling strengths. $\mathrm{\Gamma/k_BT}$ is determined using the fitting routine described above so the corresponding NRG can be plotted alongside the data. Good agreement is found at each coupling. 
+
+
+
+
+
+
+
+% \afterpage{\clearpage}
+% \afterpage{}
+% \FloatBarrier
 \section{Varying Charge Sensor Current}
 
+This new method of plotting conductance versus occupation requires a reliable determination of $\mathrm{T>T_k}$ and leverarm from the conductance data, and clean charge transitions that can be converted into occupation. The shape of the charge transition can vary depending on the choice of virtual gate and the charge sensor QPC setpoint. In the next section, we investigate different setpoints of the charge sensor QPC and test whether the conductance versus occupation agrees with NRG.
+
+% \afterpage{\clearpage}
 \subsection{Charge Transition Dependence on Charge Sensor Current}
+
+Fig.~\ref{fig:ch3/cond_occ_ct_set-points} shows the underlying charge sensor QPC trace in green. Plotted ontop (in yellow), are the resulting charge transitions if the charge sensor gates were set to the corresponding current through the QPC. The current (y-axis), has not been scaled differently between the chargse sensor QPC trace and charge transitions. However, the sweep gate (x-axis) of the charge sensor QPC and charge transitions are not the same. The charge transition sweep gate axis have been scaled for clarity in this plot. 
+
 
 \begin{figure}[!bht]
   \begin{center}
@@ -103,10 +122,13 @@ The charge transition cannot be used as a reference to compare with conductance.
     Current through the charge sensor (green) from pinch off to the start of the first conductance plateau. Corresponding charge transition (yellow) at each of the current set-points through the charge sensor. Note, the x-axis is not the same between the underlying QPC trace and charge transitions. The charge transitions x-axis has been scaled the same amount for clarity. As the current through the charge sensor is changed, the charge transitions vary dramatically. The left and right slopes curve upwards, downwards, in the same direction or opposite to each other.}
   \end{center}
 \end{figure}
+\FloatBarrier
 
-
+It is clear that the shape of the charge transition changes depending on the current setpoint through the charge sensor QPC. Normally the QPC is set to its steepest point. The charge sensor is most sensitive here as small changes in the potential result in large changes in the current. At the steepest point the amplitude of the charge transitions is greatest. However, at each charge sensor current setpoint, the charge transition slopes vary differently on the unoccupied side versus the occupied side. Comparing the slopes on the unoccupied side (left side), at low currents they point downwards, then point upwards with increasing current and then point downwards again at the highest current setpoint. It is important to show that the agreement of conduction versus occupation is not a function of the current through the charge sensor. Otherwise, it may be possible to 'pick' a current setpoint through the charges sensor that shows or does not show agreement with NRG. 
 
 \subsection{Conductance versus Occupation Varying Charge Sensor Current}
+
+
 
 \begin{figure}[!bht]
   \begin{center}
@@ -120,8 +142,16 @@ The charge transition cannot be used as a reference to compare with conductance.
 \end{figure}
 
 
+Fig.~\ref{fig:ch3/cond_occ_QPC_vs_ct}a) shows a charge transition taken at \qty{20}{mK} at three different current set points through the charge sensor QPC. The charge transitions have been offset in current for clarity. Here it is clear that the shape of the charge transition depends on the current thbrough the charge sensor QPC. The unoccupied (left) side of the high current (blue) charge transition slopes down whilst the low current (green) charge transition slope upwards. At each of the current setpoints conductance was simultaneoulsy measured at a range of temperatures to determine $\mathrm{T>T_k}$ and leverarm. Each charge transition was converted into an occupation and the conductance versus occupation is plotted with a comparison to NRG Fig.~\ref{fig:ch3/cond_occ_QPC_vs_ct}b). The conductance versus occupation traces have been offset \qty{0.1}{2e^2/h} for clarity to show the agreement between data and NRG. 
+
+
+\afterpage{\clearpage}
 \section{Varying Coupling Symmetry}
 
+All previous conductance data shown in this thesis was taken with symmetric coupling ($\mathrm{\Gamma_R = \Gamma_L}$). Previous measurements of the Kondo effect have tuned the quantum dot to be symmetrically coupled between the the source and drain reservoirs. However, there have been studies that investigated the Kondo effect with asymmetric coupling ($\mathrm{\Gamma_R \neq \Gamma_L}$)~\cite{kondo_asymmetric}. It was found that the characteristic zero-bias peak in the Coulomb blockade shifted to nonzero bias. Due to the weaker coupling regime that we are exploring, we do not see the zero-bias peak in the middle of Coulomb blockade even with symmetric coupling. However, it stands as an interesting test to vary the coupling strength of each barrier from symmetrically coupled to asymmetrically coupled. This way we can tune from a regime where the quantum dot is coupled to two reservoirs and approach a regime where the quantum dot is coupled to a single reservoir. In practice we cannot reach a regime where the quantum dot is coupled to a single reservoir, as we cannot measure the conductance through the quantum dot. 
+
+
+\afterpage{\clearpage}
 \subsection{Determining Coupling Symmetry Ratio}
 
 \begin{figure}[!bht]
@@ -138,8 +168,39 @@ The charge transition cannot be used as a reference to compare with conductance.
 \end{figure}
 
 
+The width of a strongly coupled conductance peak is controlled by $\Gamma$. This $\Gamma$ is the sum of the individual couplings $\Gamma=\mathrm{\Gamma_L} + \mathrm{\Gamma_R}$. The amplitude of the conductance depends on each separate coupling Eq.~\ref{eq:cond_amp}. These relations can be re-arranged to form an expression for the ratio $\mathrm{\Gamma_L}/\mathrm{\Gamma_R}$.
 
-\section{Conductance versus Occupation Varying Coupling Symmetry}
+
+\begin{equation}\label{eq:cond_ratio}
+  \frac{\mathrm{\Gamma_L}}{\mathrm{\Gamma_R}} = 
+  \frac
+  {\Gamma/2 + \sqrt{\Gamma^2/4 - \Gamma\mathrm{G_0}}}
+  {\Gamma/2 - \sqrt{\Gamma^2/4 - \Gamma\mathrm{G_0}}}
+\end{equation}
+
+The dot is symmetrically coupled when $\mathrm{\Gamma_L}/\mathrm{\Gamma_R} = 1$, more strongly coupled to the left reservoir when $\mathrm{\Gamma_L}/\mathrm{\Gamma_R} > 1$ and more strongly coupled to the right reservoir when $\mathrm{\Gamma_L}/\mathrm{\Gamma_R} < 1$. To vary the symmetry of coupling in the device, a 2d scan of the conductance with a gate that controls each coupling on each axis.  In Fig.~\ref{fig:ch3/symmetry_picking}a) V\textsubscript{CSS} (y-axis) mainly controls $\mathrm{\Gamma_R}$ and  V\textsubscript{RC} (x-axis) mainly controls $\mathrm{\Gamma_L}$. Four points are picked from symmetric coupling to asymmetric coupling, where the dot is more strongly coupled to the right reservoir. The ratio $\mathrm{\Gamma_L}/\mathrm{\Gamma_R}$ was only calculated after the conductance global fit to NRG, which determined $\Gamma$. 
+
+The charge transitions were simultaneously measured so that conductance versus occupation could be plotted alongside NRG. Charge transitions for each coupling setpoint were measured with $\sim\qty{0.4}{nA}$ through the charge sensor Fig.~\ref{fig:ch3/symmetry_picking}b). Each of the charge transitions did not have charge motion near the transition, and so were deemed a reliable measure of the occupation. It is interesting that the more asymmetrically coupled transition (green) is much more broadened than the symmetrically coupled transition (pink). $\mathrm{\Gamma/T}$ determined from the global fit to conductance varied from 20.5 for symmetric coupling to 26.0 for asymmetric coupling. However, a global fit to the charge transitions finds 19.6 for symmetric coupling and 45.0 for asymmetric coupling Table~\ref{tab:sym_coupling_gf}. 
+% \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+\begin{table}[H]     
+\centering
+  \begin{tabular}{|c|c|c|}
+  % \begin{tabular}{|c{2.0cm}|c{5.0cm}|c{5.0cm}|}
+    \hline
+     $\mathrm{\Gamma_L}/\mathrm{\Gamma_R}$ & $\mathrm{\Gamma/T}$ Conductance Global Fit & $\mathrm{\Gamma/T}$ Charge Transition Global Fit\\
+    \hline
+    0.009 & 26.0 & 45.0\\
+    0.030 & 24.4 & 30.9\\
+    0.200 & 22.0 & 21.6 \\
+    1.000 & 20.5 & 19.6 \\
+    \hline
+  \end{tabular}
+ \caption[$\mathrm{\Gamma/T}$ determined from a global fit to conductance and charge transitions at different ratios of coupling symmetry.]{\label{tab:sym_coupling_gf} $\mathrm{\Gamma/T}$ determined from a global fit to conductance and separately a global fit to charge transitions at different ratios of coupling symmetry. At symmetric coupling the determined $\mathrm{\Gamma/T}$ from conductance and charge transitions is similar. However, at asymmetric coupling the $\mathrm{\Gamma/T}$  from a global fit to charge transitions is much greater than from a global fit to conductance.}
+\end{table}
+
+\afterpage{\clearpage}
+\subsection{Conductance versus Occupation Varying Coupling Symmetry}
 
 
 
@@ -156,4 +217,13 @@ The charge transition cannot be used as a reference to compare with conductance.
 \end{figure}
 
 
-\section{Discussion}
+Fig.~\ref{fig:ch3/cond_occ_assymetry}a) shows conductance versus occupation taken at \qty{20}{mK} at the four ratios of coupling symmetry found in Fig.~\ref{fig:ch3/symmetry_picking}a). There is good agreement with NRG in the symmetric coupling (pink). As the coupling become more asymmetric the conductance maximum decreases Eq.~\ref{eq:cond_amp} and agreement with NRG is difficult to determine. In Fig.~\ref{fig:ch3/cond_occ_assymetry}b) the same data has been scaled and offset for clarity. The corresponding NRG was scaled and offset the same as the data. The disagreement between asymmetric coupling (green) data and NRG is more clear. The conductance maximum of the data is shifted to the right of the NRG. This suggests the $\mathrm{\Gamma/T}$ determined from the global fit to conductance is lower than expected.
+
+
+
+% Only data from four ratios has been reported as the other three ratios are consistent with the reported four. 
+% \clearpage
+% \section{Discussion}
+
+
+% Dsicussion 

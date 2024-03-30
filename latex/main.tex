@@ -428,63 +428,58 @@ Supervisory Committee Member:\hrulefill
 \clearpage
 
 \begin{abstract}                %% Mandatory -  maximum 350 words
-  The \texttt{genthesis.cls} \LaTeX{} class file and accompanying
-  documents, such as this sample thesis, are distributed in the hope
-  that it will be useful but without any warranty (without even the
-  implied warranty of fitness for a particular purpose).  For a
-  description of this file's purpose, and instructions on its use, see
-  below.
+The Kondo effect first discovered in impure bulk metals in the 1930’s and explained in the 1960’s has seen significant interest in the field of quantum devices. The high degree of tunability and control in these devices allows for testing predictions of the Anderson model. Previous studies measure the conductance through the quantum dot and observe a zero bias peak in the middle of the Coulomb blockade valley. This effect requires strong coupling between the quantum dot and reservoirs.
 
-  These files are distributed under the GPL which should be included
-  here in the future.  Please let the author know of any changes or
-  improvements that should be made.\footnote{This thesis template was uploaded to OverLeaf in 2021 by UBC MSc student Naba Mukhtar, and modified to recent UBC requirements by Leah Edelstein-Keshet, September 2021.}
+In this work, we reduce the coupling so the Kondo effect only enhances the conductance on the shoulder of the conductance peak. By simultaneously measuring the occupation of the quantum dot we can reliably show the small enhancement of conductance due to the Kondo effect. Measuring conductance and occupation at a range of temperatures allows for the determination of relevant parameters for comparison to Numerical Renormalisation Group (NRG) theory calculations. Good agreement is found at a range of coupling strengths. However, a discrepancy is found when the tunnel barriers to the quantum dot are tuned to be asymmetric. The strong asymmetric coupling approaches a regime where the quantum dot is coupled to a single lead. A regime where a recent measurement of the entropy of the Kondo effect found a discrepancy between data and NRG. Interestingly in our experiment, conductance data showed greater Kondo enhancement than NRG, whilst the previously measured entropy showed less Kondo enhancement than NRG. A direct comparison of conductance and entropy measured in the same device with similar settings is required to provide further enlightenment on this discrepancy. 
 
-  Michael Forbes.
-  mforbes@physics.ubc.ca, michael.forbes@wsu.edu
+
+
+
+
+
   
 \end{abstract}
 
 \chapter{Lay Summary}
 
-[Required, Maximum 150 words]
-
-This is a simple summary of your thesis, written so that members of the public will get some idea about what you have done. 
-
-\chapter{Preface} % Manditory if any of the conditions are met
-
-You must include a preface if any part of your research was partly or
-wholly published in articles, was part of a collaboration, or required
-the approval of UBC Research Ethics Boards.
-
-The Preface must include the following:
-
-\begin{itemize}
-\item A statement indicating the relative contributions of all
-  collaborators and co-authors of publications (if any), emphasizing
-  details of your contribution, and stating the proportion of research
-  and writing conducted by you.
-\item A list of any publications arising from work presented in the
-  dissertation, and the chapter(s) in which the work is located.
-\item The name of the particular UBC Research Ethics Board, and the
-  Certificate Number(s) of the Ethics Certificate(s) obtained, if
-  ethics approval was required for the research.
-\end{itemize}
-
-%%% Sections and subsections etc. in the Preface should in general
-%%% not be listed in the table of contents, so use the starred form
-%%% of \section etc.
-\section*{Examples}
+ The Kondo effect, a phenomenon discovered in impure metals decades ago, has more recently been studied in quantum devices. These devices offer precise control to test theoretical predictions. In these quantum devices, a single electron on an isolated island is connected to a bath of electrons on each side. Previous studies have measured the conductance as a single electron is added to the island and found a large increase in conductance when the temperature of system was lowered. These experiments use a small barrier between the island and surrounding electrons. In our experiment, we use a large barrier, resulting in an increase in conductance too small to measure with previous methods.To measure this small increase in conductance, we also measure the occupation of the island as the single electron is added. We find agreement with theory when the barriers to the island are even, but disagreement when uneven.  
 
 
+% \chapter{Preface} % Manditory if any of the conditions are met
 
-Note that this preface must come before the table of contents.  Note
-also that this section ``Examples'' should not be listed in the table
-of contents, so we have used the starred form: \verb|\section*{Example}|.
+% You must include a preface if any part of your research was partly or
+% wholly published in articles, was part of a collaboration, or required
+% the approval of UBC Research Ethics Boards.
+
+% The Preface must include the following:
+
+% \begin{itemize}
+% \item A statement indicating the relative contributions of all
+%   collaborators and co-authors of publications (if any), emphasizing
+%   details of your contribution, and stating the proportion of research
+%   and writing conducted by you.
+% \item A list of any publications arising from work presented in the
+%   dissertation, and the chapter(s) in which the work is located.
+% \item The name of the particular UBC Research Ethics Board, and the
+%   Certificate Number(s) of the Ethics Certificate(s) obtained, if
+%   ethics approval was required for the research.
+% \end{itemize}
+
+% %%% Sections and subsections etc. in the Preface should in general
+% %%% not be listed in the table of contents, so use the starred form
+% %%% of \section etc.
+% \section*{Examples}
+
+
+
+% Note that this preface must come before the table of contents.  Note
+% also that this section ``Examples'' should not be listed in the table
+% of contents, so we have used the starred form: \verb|\section*{Example}|.
 
 \tableofcontents                %% Mandatory
-% \listoftables                   %% Mandatory if thesis has tables
+\listoftables                   %% Mandatory if thesis has tables
 \listoffigures                  %% Mandatory if thesis has figures
-\listof{Program}{List of Programs} %% Optional
+% \listof{Program}{List of Programs} %% Optional
 %% Any other lists should come here, i.e.
 %% Abbreviation schemes, definitions, lists of formulae, list of
 %% schemes, glossary, list of symbols etc.
@@ -525,40 +520,40 @@ given you the most help during the course of your graduate work.
 
 
 
-\section{Programs}
-Here we give an example of a new float as defined using the
-\texttt{float} package.  In the preamble we have used the commands
-\begin{verbatim}
-\floatstyle{ruled}
-\newfloat{Program}{htbp}{lop}[chapter]
-\end{verbatim}
-This creates a ``Program'' environment that may be used for program
-fragments.  A sample \texttt{python} program is shown in
-Program~\ref{prog:fib}.  (Note that Python places a fairly restrictive
-limit on recursion so trying to call this with a large $n$ before
-building up the cache is likely to fail unless you increase the
-recursion depth.)
-\begin{Program}
-  \caption{\label{prog:fib} Python program that computes the $n^{\rm
-      th}$ Fibonacci number using memoization.}
-\begin{verbatim}
-def fib(n,_cache={}):
-    if n < 2:
-        return 1
-    if n in _cache:
-        return _cache[n]
-    else:
-        result = fib(n-1)+fib(n-2)
-        _cache[n] = result
-        return result
-\end{verbatim}
-\end{Program}
-Instead of using a \texttt{verbatim} environment for your program
-chunks, you might like to \texttt{include} them within an
-\texttt{alltt} envrironment by including the \verb|\usepackage{alltt}|
-package (see page 187 of the \LaTeX{} book).  Another useful package
-is the \verb|\usepackage{listings}| which can pretty-print many
-different types of source code.
+% \section{Programs}
+% Here we give an example of a new float as defined using the
+% \texttt{float} package.  In the preamble we have used the commands
+% \begin{verbatim}
+% \floatstyle{ruled}
+% \newfloat{Program}{htbp}{lop}[chapter]
+% \end{verbatim}
+% This creates a ``Program'' environment that may be used for program
+% fragments.  A sample \texttt{python} program is shown in
+% Program~\ref{prog:fib}.  (Note that Python places a fairly restrictive
+% limit on recursion so trying to call this with a large $n$ before
+% building up the cache is likely to fail unless you increase the
+% recursion depth.)
+% \begin{Program}
+%   \caption{\label{prog:fib} Python program that computes the $n^{\rm
+%       th}$ Fibonacci number using memoization.}
+% \begin{verbatim}
+% def fib(n,_cache={}):
+%     if n < 2:
+%         return 1
+%     if n in _cache:
+%         return _cache[n]
+%     else:
+%         result = fib(n-1)+fib(n-2)
+%         _cache[n] = result
+%         return result
+% \end{verbatim}
+% \end{Program}
+% Instead of using a \texttt{verbatim} environment for your program
+% chunks, you might like to \texttt{include} them within an
+% \texttt{alltt} envrironment by including the \verb|\usepackage{alltt}|
+% package (see page 187 of the \LaTeX{} book).  Another useful package
+% is the \verb|\usepackage{listings}| which can pretty-print many
+% different types of source code.
 
 % Force a new page
 \newpage
