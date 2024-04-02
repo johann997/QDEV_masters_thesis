@@ -49,7 +49,7 @@
 % optional arguments (in []) specify options that affect how the
 % thesis is displayed.  Please see the ubcthesis documentation for
 % details about the options.
-\documentclass[msc,oneside,noheadline]{ubcthesis} 
+\documentclass[msc,oneside,noheadline, draft]{ubcthesis} 
 % draft
 % REMOVE4HANDIN: remove draft 
 %
@@ -89,6 +89,50 @@
 % middle.
 \usepackage{afterpage}
 
+
+\usepackage{epigraph,varwidth}
+
+\renewcommand{\epigraphsize}{\small}
+\setlength{\epigraphwidth}{0.8\textwidth}
+\renewcommand{\textflush}{flushright}
+\renewcommand{\sourceflush}{flushright}
+% A useful addition
+\newcommand{\epitextfont}{\itshape}
+\newcommand{\episourcefont}{\scshape}
+
+\makeatletter
+\newsavebox{\epi@textbox}
+\newsavebox{\epi@sourcebox}
+\newlength\epi@finalwidth
+\renewcommand{\epigraph}[2]{%
+  \vspace{\beforeepigraphskip}
+  {\epigraphsize\begin{\epigraphflush}
+   \epi@finalwidth=\z@
+   \sbox\epi@textbox{%
+     \varwidth{\epigraphwidth}
+     \begin{\textflush}\epitextfont#1\end{\textflush}
+     \endvarwidth
+   }%
+   \epi@finalwidth=\wd\epi@textbox
+   \sbox\epi@sourcebox{%
+     \varwidth{\epigraphwidth}
+     \begin{\sourceflush}\episourcefont#2\end{\sourceflush}%
+     \endvarwidth
+   }%
+   \ifdim\wd\epi@sourcebox>\epi@finalwidth 
+     \epi@finalwidth=\wd\epi@sourcebox
+   \fi
+   \leavevmode\vbox{
+     \hb@xt@\epi@finalwidth{\hfil\box\epi@textbox}
+     \vskip1.75ex
+     \hrule height \epigraphrule
+     \vskip.75ex
+     \hb@xt@\epi@finalwidth{\hfil\box\epi@sourcebox}
+   }%
+   \end{\epigraphflush}
+   \vspace{\afterepigraphskip}}}
+\makeatother
+
 %******** float *********************************
 % This package allows you to customize the style of
 % "floats"---floating objects such as figures and tables.  In
@@ -97,6 +141,12 @@
 % and \listoffigures.  Common uses include introducing floats for
 % programs and other code bits in Compute Science and Chemical Schema.
 \usepackage{float}
+
+% \usepackage{xr}
+% \externaldocument{chapters/intro}
+% \externaldocument{chapters/device_background}
+% \externaldocument{chapters/kondo_conductance}
+% \externaldocument{chapters/mixed_valence_conductance}
 
 %******** tocloft *******************************
 % This package allows you to customize and define custom lists such
@@ -154,7 +204,11 @@
 %******** natbib ********************************
 % This is a very nice package for bibliographies.  It includes options
 % for sorting and compressing bibliographic entries.
-\usepackage[numbers,sort&compress]{natbib}
+% \usepackage[numbers,sort&compress]{natbib}
+
+\usepackage[backend=biber, style=ieee, doi=true, url=false]{biblatex}
+\addbibresource{bibliography.bib}
+
 
 %******** psfrag ******************************
 % This allows you to replace text in postscript pictures with formated
@@ -224,9 +278,7 @@
 
 
 \graphicspath{{figures/}}  % Set root dir for figures (can add more paths to search)
-% \usepackage[backend=biber, style=ieee, doi=true, url=false]{biblatex}
-% \addbibresource{bibliography.bib}
-% \usepackage[backend=biber, style=ieee, doi=true, url=false]{biblatex}
+
 
 
 
@@ -243,8 +295,7 @@
 \usepackage{bm} % For bold math
 \setlength{\emergencystretch}{3pt}  % Fix overfull hbox stuff (https://tex.stackexchange.com/questions/111948/what-is-a-overfull-hbox-9-89561pt-too-wide)
 % \usepackage{hyperref}
-% \usepackage[backend=biber, doi=true]{biblatex}
-% \addbibresource{bibliography.bib}
+
 \usepackage{pdfpages}  % allow adding multiple PDF pages to appendix
 
 \usepackage{url}  % used by natbib for linebreaks in long url/doi 
@@ -299,7 +350,7 @@
 % instead.
 %\faculty{The College of Graduate Studies}
 %\institutionaddress{Okanagan}
-\faculty{The Faculty of Graduate Studies}
+\faculty{THE FACULTY OF GRADUATE AND POSTDOCTORAL STUDIES}
 \institutionaddress{Vancouver}
 
 % You can issue as many of these as you have...
@@ -374,50 +425,52 @@
 
 The following individuals certify that they have read, and recommend to the Faculty of Graduate and Postdoctoral Studies for acceptance, the thesis entitled:
 
-%[Thesis title]
-\bigskip\noindent
-\hrulefill
+\bigskip
+
+\noindent\textbf{Occupation Resolved Conductance of a Kondo Singlet Formed in a Lateral Quantum Dot}
+
+% \bigskip\noindent
+% \hrulefill
 
 
 \bigskip\noindent
 submitted by 
-%Your name
-\hrulefill
-\bigskip\noindent
+\textbf{Johann Peter Drayne}
+% \hrulefill
+% \bigskip\noindent
 in partial fulfillment of the requirements for
+% \bigskip\noindent
+the degree of 
+\textbf{Master of Science}
+% \hrulefill
+% \bigskip\noindent
+in \textbf{Physics}
+% \hrulefill
 
 \bigskip\noindent
-the degree of \hrulefill
-
-%MSc/PhD 
-\bigskip\noindent
-in	
-\hrulefill
-
-\bigskip\noindent
-\textbf{[Include titles, departments, and universities, or titles and organizations. Remember to remove ALL material in square brackets [  ] before adding the page to your thesis.] Modify the examining committee to adapt to your case.}
+% \textbf{[Include titles, departments, and universities, or titles and organizations. Remember to remove ALL material in square brackets [  ] before adding the page to your thesis.] Modify the examining committee to adapt to your case.}
 
 \bigskip\noindent
 \textbf{Examining Committee:}
 
 \bigskip\noindent
-Co-supervisor: \hrulefill
+Supervisor: Joshua Folk, Professor, Physics and Astronomy, UBC
+
+% \bigskip\noindent
+% Co-supervisor: \hrulefill
 
 \bigskip\noindent
-Co-supervisor: \hrulefill
+Supervisory Committee Member: Alannah Hallas, Assistant Professor, Physics and Astronomy, UBC
 
-\bigskip\noindent
-Supervisory Committee Member: \hrulefill
-
-\bigskip\noindent
-Additional Examiner: \hrulefill
+% \bigskip\noindent
+% Additional Examiner: \hrulefill
 
 
-\bigskip\noindent
-Additional Supervisory Committee Members: 
+% \bigskip\noindent
+% Additional Supervisory Committee Members: 
 
-\bigskip\noindent
-Supervisory Committee Member:\hrulefill
+% \bigskip\noindent
+% Supervisory Committee Member:\hrulefill
 
 
 
@@ -427,7 +480,7 @@ Supervisory Committee Member:\hrulefill
 
 \clearpage
 
-\begin{abstract}                %% Mandatory -  maximum 350 words
+\begin{abstract}    %% Mandatory -  maximum 350 words
 The Kondo effect, first discovered in impure bulk metals during the 1930’s and explained in the 1960’s has gained significant interest within the field of quantum devices. 
 These devices offer a high degree of tunability and control, enabling rigorous testing of theoretical predictions.
 Previous studies on the Kondo effect have measured conductance through the quantum dot, and observe a zero bias peak in between conductance peaks. 
@@ -454,7 +507,7 @@ A direct comparison of conductance and entropy measured in the same device, unde
   
 \end{abstract}
 
-\chapter{Lay Summary}
+\chapter{Lay Summary} %% Mandatory -  maximum 150 words
 
  The Kondo effect, a phenomenon originally observed in impure metals decades ago, has more recently been studied in quantum devices. 
  These devices offer precise control to test theoretical predictions. 
@@ -469,11 +522,7 @@ A direct comparison of conductance and entropy measured in the same device, unde
  We find agreement with theory when the barriers to the island are even, but a surprising disagreement when uneven.  
 
 
-% \chapter{Preface} % Manditory if any of the conditions are met
-
-% You must include a preface if any part of your research was partly or
-% wholly published in articles, was part of a collaboration, or required
-% the approval of UBC Research Ethics Boards.
+\chapter{Preface} % Manditory if any of the conditions are met
 
 % The Preface must include the following:
 
@@ -494,11 +543,31 @@ A direct comparison of conductance and entropy measured in the same device, unde
 % %%% of \section etc.
 % \section*{Examples}
 
+This thesis encompasses the research I have undertaken during my master studies in the Quantum Devices group, led by Joshua Folk, at the University of British Columbia. 
+Although I served as the lead researcher for the measurements presented in the penultimate chapter, the following section provides a detailed breakdown of the collaborative contributions to the research shown in this thesis and also the work not included.
+
+My work in the Quantum Devices group was highlighted by numerous discussions with my supervisor, Joshua Folk, and research associate, Silvia Lüscher. These discussions proved influential throughout the entire process of developing an experimental concept, device design, measurement and analysis interpretation.
+
+The GaAs/AlGaAs heterostructures used for all presented measurements were provided to us by Michael Manfra's group at the University of Purdue.
+Specifcally, Saeed Fallahi, Geoffrey Gardner, and Michael Manfra were involved in the fabrication of the heterostructures. The mesas and ohmic contacts were fabricated by Christian Olsen at the University of Copenhagen.
+
+Although discussions with our theory collaborators on the work presented in this thesis were limited. Discussions related to other experiments that I was involved in (not mentioned in this thesis), contributed greatly to my understanding.
+The numerical renormalization group (NRG) simulations that we compare our measurements to in Chapter~\ref{cha:mixed_valence_conductance} were calculated by Yaakov Kleeorin, under the supervision of Yigal Meir.
+
+I was fortunate to join the Quantum Devices group under the supervision of Timothy Child. My first eight months in the group (as an undergraduate), was spent shadowing Timothy throughout the process of device design, fabrication, measurement and analysis. The following year (first year of master's), was spent in collaboration with Timothy, where the device used in chapter~\ref{cha:mixed_valence_conductance} was fabricated during this perios. The second year of my master's was spent leading experiments.  
+
+\subsection*{Chapter~\ref{cha:device_background}}
+fdd
 
 
-% Note that this preface must come before the table of contents.  Note
-% also that this section ``Examples'' should not be listed in the table
-% of contents, so we have used the starred form: \verb|\section*{Example}|.
+\subsection*{Chapter~\ref{cha:kondo_conductance}}
+vgn
+
+\subsection*{Chapter~\ref{cha:mixed_valence_conductance}}
+dfhg
+
+
+
 
 \tableofcontents                %% Mandatory
 \listoftables                   %% Mandatory if thesis has tables
@@ -539,7 +608,6 @@ given you the most help during the course of your graduate work.
 \include{chapters/kondo_conductance}
 \include{chapters/mixed_valence_conductance}
 \include{chapters/conclusion}
-
 
 
 
@@ -616,10 +684,10 @@ given you the most help during the course of your graduate work.
 %% of your field of study.
 %%
 %%% Note: the bibliography must come before the appendices.
-\bibliographystyle{plain}
-\bibliography{bibliography}
-% % \usepackage[backend=biber, style=ieee, doi=true, url=false]{biblatex}
-% \addbibresource{bibliography.bib}
+% \bibliographystyle{plain}
+% \bibliography{bibliography}
+
+\printbibliography
 
 %% Use this to reset the appendix counter.  Note that the FoGS
 %% requires that the word ``Appendices'' appear in the table of
