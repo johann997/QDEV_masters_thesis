@@ -49,10 +49,12 @@
 % optional arguments (in []) specify options that affect how the
 % thesis is displayed.  Please see the ubcthesis documentation for
 % details about the options.
-\documentclass[msc,oneside,noheadline, draft]{ubcthesis} 
+\documentclass[msc, oneside, noheadline]{ubcthesis} 
 % draft
 % REMOVE4HANDIN: remove draft 
-%
+
+
+
 % To compile this sample thesis, issue the following commands:
 % latex ubcsample
 % bibtex ubcsample
@@ -422,11 +424,12 @@
 
 \clearpage
 
+
 %%%THESIS APPROVAL PAGE - REQUIRED AS PART OF YOUR COMPLETED THESIS
 
 %%%%%%% UBC FoGPS Requires the following statements at the beginning of the thesis. There is a (separate) thesis approval form that has to be signed and dated by the same individuals listed here as approving the thesis. You will have to get ensure that your department submits that approval form before you will be able to create an account and upload your thesis onto ciRCle. 
 
-The following individuals certify that they have read, and recommend to the Faculty of Graduate and Postdoctoral Studies for acceptance, the thesis entitled:
+\noindent The following individuals certify that they have read, and recommend to the Faculty of Graduate and Postdoctoral Studies for acceptance, the thesis entitled:
 
 \bigskip
 
@@ -460,13 +463,17 @@ in \textbf{Physics}
 \textbf{Examining Committee:}
 
 \bigskip\noindent
-Supervisor: Joshua Folk, Professor, Physics and Astronomy, UBC
+Joshua Folk, Professor, Physics and Astronomy, UBC
+\newline\noindent
+\textit{Supervisor}
 
 % \bigskip\noindent
 % Co-supervisor: \hrulefill
 
 \bigskip\noindent
-Supervisory Committee Member: Alannah Hallas, Assistant Professor, Physics and Astronomy, UBC
+Alannah Hallas, Assistant Professor, Physics and Astronomy, UBC
+\newline\noindent
+\textit{Supervisory Committee Member}
 
 % \bigskip\noindent
 % Additional Examiner: \hrulefill
@@ -479,31 +486,34 @@ Supervisory Committee Member: Alannah Hallas, Assistant Professor, Physics and A
 % Supervisory Committee Member:\hrulefill
 
 
-
-
-
-
-
 \clearpage
 
+
 \begin{abstract}    %% Mandatory -  maximum 350 words
-The Kondo effect, first discovered in impure bulk metals during the 1930s and explained in the 1960s has gained significant interest within the field of quantum devices. 
+
+% \setcounter{page}{2}
+% \pagenumbering{roman}
+
+The Kondo effect, first discovered in impure bulk metals during the 1930s and explained in the 1960s, has gained significant interest within the field of quantum devices. 
 These devices offer a high degree of tunability and control, enabling rigorous testing of theoretical predictions.
-Previous studies on the Kondo effect have measured conductance through the quantum dot, and observe a zero bias peak in between conductance peaks. 
+Previous studies on the Kondo effect have measured conductance through a quantum dot and observed a zero-bias peak between Coulomb peaks. 
 This effect requires strong coupling between the quantum dot and leads.
 
-This work studies a relatively weak coupling, where the characteristic zero bias peak in between conductance peaks is not observed. However, as charge degeneracy of the quantum dot is approached, the Kondo temperature increases . This results in a small enhancement of conductance at the shoulder of a Coulomb blockade peak. 
-We show that a simultaneous measurement of the occupation of the quantum dot, can reliably show the small enhancement of conductance, due to the Kondo effect. 
+This work studies a relatively weak coupling, where the characteristic zero-bias peak between Coulomb peaks is not observed. However, as charge degeneracy of the quantum dot is approached, the Kondo temperature increases. This results in a small conductance enhancement at the shoulder of the Coulomb peak. 
+We show that a simultaneous measurement of the quantum dot's occupation can unveil the small enhancement of conductance due to the Kondo effect. 
 
-Measurements of conductance and occupation across a range of temperatures, allows for the determination of relevant parameters for comparison to Numerical Renormalisation Group (NRG) theory calculations. 
+To compare with Numerical Renormalisation Group (NRG) theory, conductance and occupation are measured across a range of temperatures to determine fitting parameters.
 Good agreement is found at a range of coupling strengths and charge sensor current setpoints.
 However, a discrepancy is found when the tunnel barriers to the quantum dot are asymmetrically tuned. 
 
+% Measurements of conductance and occupation across a range of temperatures allow for the determination of relevant parameters for comparison to Numerical Renormalisation Group (NRG) theory calculations. 
+
+
 
 Strong asymmetric coupling approaches a regime where the quantum dot is coupled to a single lead. 
-A recent measurement of the entropy of a quantum dot coupled to a single lead, with an expected Kondo effect, observed a discrepancy between data and NRG. 
-Interestingly, our experiment shows that conductance data displays greater Kondo enhancement than NRG, whereas previously measured entropy, showed less Kondo enhancement than NRG. 
-A direct comparison of conductance and entropy measured in the same device, under similar settings, holds promise for illuminating this discrepancy.
+A recent measurement of the entropy of a quantum dot coupled to a single lead where Kondo correlations were expected also observed a discrepancy between data and NRG. 
+Interestingly, this work shows that conductance data displays greater Kondo enhancement than NRG, whereas previously measured entropy showed less Kondo enhancement than NRG. 
+A direct comparison of conductance and entropy measured in the same device under similar settings holds promise for illuminating this discrepancy.
 
 
 
@@ -515,86 +525,41 @@ A direct comparison of conductance and entropy measured in the same device, unde
 
 \chapter{Lay Summary} %% Mandatory -  maximum 150 words
 
- The Kondo effect, a phenomenon originally observed in impure metals decades ago, has more recently been studied in quantum devices. 
+ The Kondo effect, a phenomenon originally observed in impure metals decades ago, has been studied more recently in quantum devices. 
  These devices offer precise control to test theoretical predictions. 
  In these devices, a single electron on an isolated island is connected to a bath of electrons on each side.
  
- Previous studies have measured the conductance as a single electron is added to the island and observed a large increase in conductance, as the system's temperature was lowered. 
- These experiments use a small barrier between the island and surrounding electrons. 
+ Previous studies have measured the conductance through the island as a single electron is added and observed a large increase in conductance as the system's temperature was lowered. 
+ These experiments used a small barrier between the island and surrounding electrons. 
 
  
- In our experiment, we use a large barrier, resulting in an increase in conductance too small to measure with previous methods.
- To measure this small increase in conductance, we also measure the occupation of the island as a single electron is added. 
- We find agreement with theory when the barriers to the island are even, but a surprising disagreement when uneven.  
+ In our experiment, we used a large barrier, resulting in an increase in conductance that was too small to measure with previous methods.
+ To measure this small increase in conductance, we also measure the island's occupation as a single electron is added. 
+ When the barriers to the island are even, we find agreement with theory, and surprising disagreement when uneven. 
+
 
 
 \chapter{Preface} % Manditory if any of the conditions are met
 
-% The Preface must include the following:
+This thesis encompasses the research I conducted during my Master's studies in the Quantum Devices group, led by Joshua Folk, at the University of British Columbia. 
 
-% \begin{itemize}
-% \item A statement indicating the relative contributions of all
-%   collaborators and co-authors of publications (if any), emphasizing
-%   details of your contribution, and stating the proportion of research
-%   and writing conducted by you.
-% \item A list of any publications arising from work presented in the
-%   dissertation, and the chapter(s) in which the work is located.
-% \item The name of the particular UBC Research Ethics Board, and the
-%   Certificate Number(s) of the Ethics Certificate(s) obtained, if
-%   ethics approval was required for the research.
-% \end{itemize}
-
-% %%% Sections and subsections etc. in the Preface should in general
-% %%% not be listed in the table of contents, so use the starred form
-% %%% of \section etc.
-% \section*{Examples}
-
-This thesis encompasses the research I have undertaken during my master studies in the Quantum Devices group, led by Joshua Folk, at the University of British Columbia. 
-
-Numerous discussions with Joshua Folk and Silvia Lüscher, have greatly influenced the experimental concept, device design, and analysis interpretation. 
+Numerous discussions with my supervisor Joshua Folk, and research associate Silvia Lüscher have greatly influenced the experimental concept, device design, and analysis interpretation. 
 
 The GaAs/AlGaAs heterostructures were provided by Michael Manfra's group at the University of Purdue.
-The mesas and ohmic contacts were fabricated by Christian Olsen at the University of Copenhagen.
+Christian Olsen fabricated the mesas and ohmic contacts at the University of Copenhagen.
 
 
-The numerical renormalization group (NRG) simulations that we compare our measurements to in Chapter~\ref{cha:mixed_valence_conductance}, were calculated by Yaakov Kleeorin, under the supervision of Yigal Meir.
+Numerical Renormalisation Group (NRG) simulations that we compare our measurements to in Chapter~\ref{cha:mixed_valence_conductance}, were calculated by Yaakov Kleeorin, under the supervision of Yigal Meir.
 
 
-I joined the Quantum Devices group as an undergraduate and spent the first eight months shadowing Timothy Child throughout the process of device design, fabrication, measurement and analysis.
+I joined the Quantum Devices group as an undergraduate (September 2021) and spent the first eight months shadowing Timothy Child throughout the design, fabrication, measurement, and analysis processes.
 
-The following year (first year of master's), was spent working closely with Timothy on device design, fabrication and measurement. All devices used in this thesis were fabricated by Timothy and I during this period. All data taken in chapter~\ref{cha:device_background} and chapter~\ref{cha:kondo_conductance} was taken by Timothy and I. In particular, at the end of this period, Timothy and I took preliminary measurements in the regime explored in Chapter~\ref{cha:mixed_valence_conductance}. These measurements demonstrated a working proof of how to measure in this regime. 
+The following year (first year of my Master's, September 2022), I spent working closely with Timothy on device design, fabrication, and measurement. Timothy and I fabricated all devices used in this thesis during this period. All data taken in Chapter~\ref{cha:device_background} and Chapter~\ref{cha:kondo_conductance} was taken by Timothy and I. In particular, at the end of this period, Timothy and I took preliminary measurements in the regime explored in Chapter~\ref{cha:mixed_valence_conductance}. These measurements demonstrated a working proof of how to measure in this regime. 
 
-In my final year, Timothy worked on his PhD and I became the lead researcher responsible for data collection and analysis.
-All data taken in chapter~\ref{cha:mixed_valence_conductance} was taken during this period.  
+In my final year (starting May 2023), Timothy worked on his PhD, and I became the lead researcher responsible for data collection and analysis.
+All data taken in Chapter~\ref{cha:mixed_valence_conductance} was taken during this period.  
 
-All figures in the thesis are the product of my work. 
-
-% on subsequent cooldowns and all the data shown in this Chapter~\ref{cha:mixed_valence_conductance} was taken in these later measurements. As previously mentioned, Yaakov Kleeorin produced the NRG simulations. All figures are the product of my own work. 
-% I was fortunate to join the Quantum Devices group under the supervision of Timothy Child. My first eight months in the group (as an undergraduate), was spent shadowing Timothy throughout the process of device design, fabrication, measurement and analysis. The following year (first year of master's), was spent in close collaboration on device design and measurement with Timothy. It was during this period, that all measurements shown in this thesis, were taken on devices fabricated by Timothy and I. At the end of this period, Timothy and I took initial measurements in the regime explored in Chapter~\ref{cha:mixed_valence_conductance}. These measurements demonstrated a working proof on how to measure in this regime. 
-
-
-% Although I served as the lead researcher for the measurements presented in the penultimate chapter, the following section provides a detailed breakdown of the collaborative contributions to the research shown in this thesis and also the work not included.
-
-% My work in the Quantum Devices group was highlighted by numerous discussions with my supervisor, Joshua Folk, and research associate, Silvia Lüscher. These discussions proved influential throughout the entire process of developing an experimental concept, device design, measurement and analysis interpretation.
-
-% The GaAs/AlGaAs heterostructures used for all presented measurements were provided to us by Michael Manfra's group at the University of Purdue.
-% Specifcally, Saeed Fallahi, Geoffrey Gardner, and Michael Manfra were involved in the fabrication of the heterostructures. The mesas and ohmic contacts were fabricated by Christian Olsen at the University of Copenhagen.
-
-% Although discussions with our theory collaborators on the work presented in this thesis were limited. Discussions related to other experiments that I was involved in (not mentioned in this thesis), contributed greatly to my understanding.
-% The numerical renormalization group (NRG) simulations that we compare our measurements to in Chapter~\ref{cha:mixed_valence_conductance} were calculated by Yaakov Kleeorin, under the supervision of Yigal Meir.
-
-% I was fortunate to join the Quantum Devices group under the supervision of Timothy Child. My first eight months in the group (as an undergraduate), was spent shadowing Timothy throughout the process of device design, fabrication, measurement and analysis. The following year (first year of master's), was spent in close collaboration on device design and measurement with Timothy. It was during this period, that all measurements shown in this thesis, were taken on devices fabricated by Timothy and I. At the end of this period, Timothy and I took initial measurements in the regime explored in Chapter~\ref{cha:mixed_valence_conductance}. These measurements demonstrated a working proof on how to measure in this regime. 
-
-
-% \subsection*{Chapter~\ref{cha:device_background}}
-% The data shown here is common in the start of any cooldown and is used to characterise the device. All data shown was taken as a lead researcher or in collaboration with Timothy.
-% All figures are the product of my own work. 
-
-% \subsection*{Chapter~\ref{cha:kondo_conductance}}
-% Data here was the result of a close collaboration between Timothy and I on measurement and analysis. All figures are the product of my own work. 
-
-% \subsection*{Chapter~\ref{cha:mixed_valence_conductance}}
-% Timothy and I collaborated on a single cooldown which focused on developing the technique for measurement and analysis in this regime. However, I was the lead researcher on subsequent cooldowns and all the data shown in this Chapter~\ref{cha:mixed_valence_conductance} was taken in these later measurements. As previously mentioned, Yaakov Kleeorin produced the NRG simulations. All figures are the product of my own work. 
+All figures in this work are original.
 
 
 
@@ -730,7 +695,7 @@ given you the most help during the course of your graduate work.
 % \renewcommand{\appendicesname}{Appendix}
 \appendix
 \include{latex/chapters/appendix1}
-
+\include{latex/chapters/appendix2}
 % \chapter{First Appendix}
 % Here you can have your appendices.  Note that if you only have a
 % single appendix, you should issue
@@ -738,8 +703,8 @@ given you the most help during the course of your graduate work.
 % \verb|\appendix| to display the singular ``Appendix'' rather than the
 % default plural ``Appendices''.
 
-\chapter{Second Appendix}
-Here is the second appendix.
+% \chapter{Second Appendix}
+% Here is the second appendix.
 
 %% This changes the headings and chapter titles (no numbers for
 %% example).
