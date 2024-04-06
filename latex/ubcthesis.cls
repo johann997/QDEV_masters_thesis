@@ -108,7 +108,7 @@
 }
 \@AtStartOfAbstract{%
   \if@twoside\else
-    \setcounter{page}{2}
+    \setcounter{page}{3}
   \fi
 }
   \@AfterTitlepage{\global\let\ps@empty\ps@plain}
