@@ -49,7 +49,7 @@
 % optional arguments (in []) specify options that affect how the
 % thesis is displayed.  Please see the ubcthesis documentation for
 % details about the options.
-\documentclass[msc, oneside, noheadline]{ubcthesis} 
+\documentclass[msc, oneside, noheadline, draft]{ubcthesis} 
 % draft
 % REMOVE4HANDIN: remove draft 
 
@@ -554,10 +554,10 @@ Numerical Renormalisation Group (NRG) simulations that we compare our measuremen
 
 I joined the Quantum Devices group as an undergraduate (September 2021) and spent the first eight months shadowing Timothy Child throughout the design, fabrication, measurement, and analysis processes.
 
-The following year (first year of my Master's, September 2022), I spent working closely with Timothy on device design, fabrication, and measurement. Timothy and I fabricated all devices used in this thesis during this period. All data taken in Chapter~\ref{cha:device_background} and Chapter~\ref{cha:kondo_conductance} was taken by Timothy and I. In particular, at the end of this period, Timothy and I took preliminary measurements in the regime explored in Chapter~\ref{cha:mixed_valence_conductance}. These measurements demonstrated a working proof of how to measure in this regime. 
+The following year (first year of my Master's studies, September 2022), I spent working closely with Timothy on device design, fabrication, and measurement. Timothy and I fabricated all devices used in this thesis during this period. All data taken in Chapter~\ref{cha:device_background} and Chapter~\ref{cha:kondo_conductance} was taken by Timothy and I. In particular, at the end of this period, Timothy and I took preliminary measurements in the regime explored in Chapter~\ref{cha:mixed_valence_conductance}. These measurements demonstrated a working proof of how to measure in this regime. 
 
 In my final year (starting May 2023), Timothy worked on his PhD, and I became the lead researcher responsible for data collection and analysis.
-All data taken in Chapter~\ref{cha:mixed_valence_conductance} was taken during this period.  
+All data taken in Chapter~\ref{cha:mixed_valence_conductance} was taken during this period.
 
 All figures in this work are original.
 
@@ -573,8 +573,43 @@ All figures in this work are original.
 %% schemes, glossary, list of symbols etc.
 
 \chapter{Acknowledgements}      %% Optional
-This is the place to thank professional colleagues and people who have
-given you the most help during the course of your graduate work.
+As I write this final section of my thesis on a rainy Vancouver evening, I can't help but think of this chapter of my life coming to an end. I have spent the last seven years at the University of British Columbia, where the last three in the Quantum Devices Group have been a particular highlight. I must start by thanking all current and former members of the group. Much work is required to study quantum dots, and none of my work would have been possible without all the effort that has been put into creating an educational and thought-provoking lab environment.
+
+
+Of course, my first personal thanks must go to my supervisor, Professor Joshua Folk. Over the last three years, his ability to explain tricky concepts, patience to ensure my understanding and attention to detail has made me a better physicist. 
+One of many skills that I will take with me is understanding when I do and do not understand. 
+
+Dr. Silvia Lüscher: Much have I learnt from Silvia on mesoscopic physics and the art of fabrication. Most of our crossover was in meetings, discussing active measurements or future steps. Here Silvia's insights would offer alternate paths to the solution. This provided me with a continual reminder to explore all options before settling on an answer. Also, her Swiss chocolate recommendation (`Ragusa') is excellent.   
+
+Dr. Timothy Child: A senior PhD student who was my mentor during my first year in the group. We worked together closely in my second year. Many long days were spent together being serenaded by the pulse tube. It didn't take long for us to become friends. Joined by a genuine passion for learning and adventure, our many discussions and deliberations were not only of great academic but also personal interest. 
+
+Vahid Mohaved: A PhD student who joined in my final year here. Our love for coffee brought us together on many Tim Horton's trips where we discussed physics and more.  
+
+Elena Cornick: A Ph.D. student who joined me in my final half-year here. Although we only had a short cross-over, we worked efficiently, and Elena's theoretical insights were a welcome challenge to my `tennis ball' model of electrons. 
+
+Lily Watt: An undergraduate student who worked on perfecting our ohmic recipe. I always enjoyed the insightful questions and wish her the best as president of UBCQ.
+
+Raveel Tejani: An undergraduate who tackled the brave task of developing `master-slave' functionality for our measuring instruments. Our lunch walks for pizza slices and discussions on climbing were enjoyable breaks from weeks of confusing measurements.  
+
+
+Dr. Yigal Meir, Dr. Eran Sela, and Dr. Andrew Mitchell: Our theory collaborators for their expertise and understanding of how to translate their theoretical frameworks onto our experiments. 
+
+
+Our `Quantropy' collaborators at ETH Zurich (Klauss Ensslin and Thomas Ihn's), and Université Paris-Saclay (Frederic Pierre's), thank you for organising the Quantropy conferences over the past three years. The wide range of disciplines and shared goals fostered fruitful conversations. Witnessing the birth and debate of new experimental ideas was remarkable.
+
+
+
+Diego, Mason and Pearce: My good friends from University and back home in Ireland. We have all moved to different cities, but our friendships remain strong. I always look forward to our calls for fresh perspectives and annual, sometimes bi-annual, meetups for a beer or three. 
+
+Čeňka: My sister, we have grown up greatly over the past few years although it seems that distance has brought us closer. I love our discussions and danceoffs, I look forward to being closer to home in the future.
+
+Jana and Peter: My parents, it goes without saying that much of who I am is influenced by you. I always look forward to our weekly catchups, whether they are long or short, they keep me rooted. 
+
+Olivia: My fiancée and future wife. Little did I know that seven years ago, when I decided to cross the Atlantic, I would find a life partner. From our protein bar assembly line to our \qty{14}{hour} hikes, who knows what our next chapter will hold. I look forward to it with eager anticipation.  
+
+
+
+
 
 \chapter{Dedication} %% Optional
 
@@ -584,7 +619,7 @@ given you the most help during the course of your graduate work.
     Be Bright,\\
     Be Brief,\\
     Be Off.\\
-    ---Eileen Drayne
+    ---My Irish granny, Eileen Drayne
   \end{center}
 \end{quote}
 
@@ -607,77 +642,13 @@ given you the most help during the course of your graduate work.
 
 
 
-% \section{Programs}
-% Here we give an example of a new float as defined using the
-% \texttt{float} package.  In the preamble we have used the commands
-% \begin{verbatim}
-% \floatstyle{ruled}
-% \newfloat{Program}{htbp}{lop}[chapter]
-% \end{verbatim}
-% This creates a ``Program'' environment that may be used for program
-% fragments.  A sample \texttt{python} program is shown in
-% Program~\ref{prog:fib}.  (Note that Python places a fairly restrictive
-% limit on recursion so trying to call this with a large $n$ before
-% building up the cache is likely to fail unless you increase the
-% recursion depth.)
-% \begin{Program}
-%   \caption{\label{prog:fib} Python program that computes the $n^{\rm
-%       th}$ Fibonacci number using memoization.}
-% \begin{verbatim}
-% def fib(n,_cache={}):
-%     if n < 2:
-%         return 1
-%     if n in _cache:
-%         return _cache[n]
-%     else:
-%         result = fib(n-1)+fib(n-2)
-%         _cache[n] = result
-%         return result
-% \end{verbatim}
-% \end{Program}
-% Instead of using a \texttt{verbatim} environment for your program
-% chunks, you might like to \texttt{include} them within an
-% \texttt{alltt} envrironment by including the \verb|\usepackage{alltt}|
-% package (see page 187 of the \LaTeX{} book).  Another useful package
-% is the \verb|\usepackage{listings}| which can pretty-print many
-% different types of source code.
-
 % Force a new page
 \newpage
 
-%% Here we provide a short optional argument to \chapter[]{}.  This
-%% optional argument will appear in the table of contents.  For long
-%% titles, one should use this to give a single-line entry to the
-%% table of contents.
-% \chapter[Another Chapter\ldots]{Another Chapter with a Very Long
-%   Chapter-name that will Probably Cause Problems}
-% \label{cha:apple_ref}
-
-% This chapter name is very long and does not display properly in the
-% running headers or in the table of contents.  To deal with this, we
-% provide a shorter version of the title as the optional argument to the
-% \verb|\chapter[]{}| command.
-
-% For example, this chapter's title and associated table of contents heading and
-% running header was created with\\
-% \verb|\chapter[Another Chapter\ldots]{Another Chapter with a Very Long|\\
-% \verb|Chapter-name that will Probably Cause Problems}|.
-
-% Note that, according to the thesis regulations, the heading included
-% in the table of contents must be a truncation of the actual heading.
-
-
-
-
-% \section*{An Unnumbered Section That is Not Included in the Table of
-%   Contents}
 
 \afterpage{\clearpage}
 
-%% This file is setup to use a bibtex file sample.bib and uses the
-%% plain style.  Other styles may be used depending on the conventions
-%% of your field of study.
-%%
+
 %%% Note: the bibliography must come before the appendices.
 % \bibliographystyle{plain}
 % \bibliography{bibliography}
@@ -692,9 +663,10 @@ given you the most help during the course of your graduate work.
 %% a default option to the UBC thesis class.
 
 %%% If you only have one appendix, please uncomment the following line.
-% \renewcommand{\appendicesname}{Appendix}
 \appendix
+
 \include{latex/chapters/appendix1}
+
 \include{latex/chapters/appendix2}
 % \chapter{First Appendix}
 % Here you can have your appendices.  Note that if you only have a
