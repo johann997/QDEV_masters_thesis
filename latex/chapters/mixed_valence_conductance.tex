@@ -3,13 +3,15 @@
 
 \epigraph{Po bitvě je každý generál.}{Czech proverb}%~\cite{Strauss1998}}
 
-\noindent To my knowledge, the following work in this chapter is the first time that conductance and charge transitions have been simultaneously measured to resolve the conductance enhancement due to the Kondo effect as a function of the occupation in an experiment. The conductance enhancement from Kondo is most pronounced when the quantum dot is strongly coupled ($\mathrm{\Gamma/k_BT}>>1$) to the source and drain leads. Previous measurements of the Kondo effect focus on the conductance enhancement between Coulomb peaks. However, when the coupling is strong, charge transitions broaden and become challenging to convert into an occupation. The following work falls between the tightly confined window of strong coupling to see the Kondo effect and weak coupling, where charge transitions are easily measured. 
+\noindent To my knowledge, the following work in this chapter is the first time that conductance and charge transitions have been simultaneously measured to resolve the conductance enhancement due to the Kondo effect as a function of the quantum dot occupation in an experiment. The conductance enhancement from Kondo is most pronounced when the quantum dot is strongly coupled ($\mathrm{\Gamma/k_BT}>>1$) to the source and drain leads. Previous measurements of the Kondo effect focus on the conductance enhancement between Coulomb peaks. However, when the coupling is strong, charge transitions broaden and become challenging to convert into the occupation. 
+The following work operates within the narrow spectrum bounded by strong coupling, where the Kondo effect is observable, and weak coupling, where charge transitions are easily measured. 
+
 
 \section{Introduction}
 Previous measurements of the Kondo effect in quantum dots study the temperature dependence of conductance between Coulomb peaks. It is in this so-called Kondo regime that the full charge of the electron is in the dot, so there is a definite net spin, and the theory is well understood~\cite{costi_kondo_mv_eo_regime, kondo_unitary}. In this regime, the Kondo temperature (Eq.~\ref{eq:kondo_temp}) sets a new, many-body scale and is used to universally scale the conductance (Eq.~\ref{eq:kondo_conductance}). This one-parameter scaling of conductance in the Kondo regime is used as one of the demonstrations of the Kondo effect. When the coupling between the quantum dot and source and drain leads is reduced, the Kondo temperature drops below the system temperature, and the conductance enhancement is not seen between Coulomb peaks. Only a handful of experiments have studied conductance with less strong coupling~\cite{goldhaber_mv}. Such studies observed the parameter $\mathrm{s}$ from Eq.~\ref{eq:kondo_conductance} and found that in the Kondo regime (the full charge of the electron is in the dot), $\mathrm{s}$ was constant and equal to $0.20$. However, as the shoulder of a Coulomb peak was approached ($\tilde{\epsilon}_0>-0.5$), $\mathrm{s}$ varied rapidly. Qualitatively, this regime is entered when the dot energy $\epsilon_0$ approaches the Fermi energy of the leads, and only a fraction of the electron charge is in the dot. 
 
 
-Our aim was to measure the Kondo effect with a coupling strength such that the conductance between Coulomb peaks was zero. This regime, characterised by a relatively small $\Gamma$, results in a small Kondo temperature between Coulomb peaks, and no conductance enhancement would be measured. However, the Kondo temperature will increase as the dot energy approaches the Fermi energy of the leads (moves towards the shoulder of a Coulomb peak). Hence, for relatively small coupling strengths, the Kondo effect can still be seen as a very small conductance enhancement on the odd occupied side of a Coulomb peak. As the conductance enhancement in this regime is very small, it is insufficient to investigate the Kondo effect with a conductance measurement only, for two reasons. Firstly, entropy shifts the occupation of the quantum dot with temperature. This effect has been taken advantage of in a recently developed entropy measurement technique~\cite{hartman, child_strong, child_meas}. This shift in occupation can be ignored when the coupling is strong, and conductance enhancement between Coulomb peaks is large. Secondly, charge motion in the dopant layer can shift the conductance left or right with respect to the gate voltage in a scan. The shifting from charge motion renders it impossible to offset the effects of entropy by retroactively shifting conductance. For these two reasons, it is necessary to simultaneously measure a second `reference' signal alongside the conductance. This reference signal can then be used to offset the above effects and allow for comparison of the conductance across multiple temperatures. 
+Our aim was to measure the Kondo effect with a coupling strength such that the conductance between Coulomb peaks was zero. This regime, characterised by a relatively small $\Gamma$, results in a small Kondo temperature between Coulomb peaks where no conductance enhancement would be measured. However, the Kondo temperature will increase as the dot energy approaches the Fermi energy of the leads (moves towards the shoulder of a Coulomb peak). Hence, for relatively small coupling strengths, the Kondo effect can still be seen as a very small conductance enhancement on the odd occupied shoulder of a Coulomb peak. As the conductance enhancement in this regime is very small, it is insufficient to investigate the Kondo effect with a conductance measurement only, for two reasons. Firstly, entropy shifts the occupation of the quantum dot with temperature. This effect has been taken advantage of in a recently developed entropy measurement technique~\cite{hartman, child_strong, child_meas}. This shift in occupation can be ignored when the coupling is strong, and conductance enhancement between Coulomb peaks is large. Secondly, charge motion in the dopant layer can shift the conductance left or right with respect to the gate voltage in a scan. The shifting from charge motion renders it impossible to offset the effects of entropy by retroactively shifting conductance. For these two reasons, it is necessary to simultaneously measure a second `reference' signal alongside the conductance. This reference signal can then be used to offset the above effects and allow for comparison of the conductance across multiple temperatures. 
 
 We measure the charge in the quantum dot simultaneously with conductance. Assuming a linear relation between the measured change in charge and the real occupation of the quantum dot, the charge transition is converted into an occupation. The occupation is then used to plot the conductance as a function of occupation. A shifting of the conductance maximum to a higher occupation is a signature of the Kondo effect. 
 As the universal scaling of conductance does not hold in this regime, a comparison to theory calculations (described in an upcoming section) is required to verify Kondo enhancement. 
@@ -36,7 +38,7 @@ It is much trickier to tune the quantum dot into a regime where both the conduct
 \noindent Here $\mathrm{G_0}$ is the conductance maximum. This decrease in conductance amplitude means that the conductance signal can be lost within the background noise. Additionally, as the Kondo temperature decreases with reduced coupling, the conductance enhancement due to Kondo can become immeasurable.
 
 
-In a strongly coupled regime ($\mathrm{\Gamma/k_BT}>>1$), Coulomb peaks are usually easier to measure. Here the line shape for a Coulomb peak is given by the Breit-Wigner formula~\cite{Breit1936}. The conductance is maximum when the dot energy is in line with the Fermi energy of the leads and depends on the coupling as,
+In a strongly coupled regime ($\mathrm{\Gamma/k_BT}>>1$), the line shape for a Coulomb peak is given by the Breit-Wigner formula~\cite{Breit1936}. The conductance is maximum when the dot energy is in line with the Fermi energy of the leads and depends on the coupling as,
 
 \begin{equation}\label{eq:cond_amp_strong}
  \mathrm{G_0} \propto
@@ -44,7 +46,7 @@ In a strongly coupled regime ($\mathrm{\Gamma/k_BT}>>1$), Coulomb peaks are usua
 \end{equation}
 
 \noindent In both weakly and strongly coupled regimes, it is evident that the conductance reaches a maximum when the tunnel barriers are symmetric ($\Gamma_\mathrm{L}=\Gamma_\mathrm{R}$). Strong coupling also has the added benefit of an increase in Kondo temperature, leading to greater enhanced conductance. 
-However, as Coulomb peaks become easier to measure, charge transitions become very broadened and difficult to measure (Fig.~\ref{fig:ch1/virtual_gate_example}). When strongly coupled, large sweeps in gate voltage are required to cover a range where the quantum dot is fully unoccupied to occupied. This can result in the charge sensor being pushed into a non-linear regime due to the cross-capacitive coupling from the sweep gate.
+However, charge transitions become very broadened and difficult to measure (Fig.~\ref{fig:ch1/virtual_gate_example}). When strongly coupled, large sweeps in gate voltage are required to cover a range where the quantum dot is fully unoccupied to occupied. This can result in the charge sensor being pushed into a non-linear regime due to the cross-capacitive coupling from the sweep gate.
 A non-linear relationship between the current through the charge sensor and the addition of charge into the quantum dot makes extraction of dot occupation from the charge transition unreliable. Hence, a virtual gate shown in Fig.~\ref{fig:ch1/virtual_gate_example}, that keeps the current through the charge sensor constant is required. The exact ratio of gates used to form a virtual gate can drastically change the underlying shape of the charge transition, which will be discussed in an upcoming section. 
 
 
@@ -103,6 +105,20 @@ Plotting conductance versus occupation overcomes the issue of conductance shifti
 \section{Kondo Effect with Varying Coupling Strength}
 
 
+% \begin{figure}[!hbt]
+%  \begin{center}
+% %% includegraphics: comment the following if not using the graphicx package
+%  \includegraphics[width=0.85\textwidth]{figures/ch3/figure15.pdf}
+%  \caption[Conductance versus Occupation : Varying Coupling Strength]{\label{fig:ch3/cond_occ_couplingstrength} 
+%  % For some options that work with pdf\LaTeX, please see this discussion:
+%  % \url{http://tex.stackexchange.com/questions/11839}. 
+%  Conductance versus occupation in a weak (green) and strong (blue) coupling regime. Each trace is taken at \qty{20}{mK}. The coupling strength $\mathrm{\Gamma/k_BT}$ was determined from a global fit to multiple temperatures. The NRG (grey) conductance versus occupation corresponding to the determined $\mathrm{\Gamma/k_BT}$ is plotted on top of the data. Good agreement is found at each coupling strength.}
+%  \end{center}
+% \end{figure}
+
+
+In Fig.~\ref{fig:ch3/cond_vs_occ_gf}\textbf{b}, the Kondo enhancement dependence on the system's temperature was confirmed. At high temperatures $\mathrm{T>T_K}$, there is no Kondo singlet, and so the conductance maximum is near $\mathrm{N} = 0.5$. But at low temperatures $\mathrm{T<T_K}$, a Kondo singlet is formed, and the conductance maximum shifts to higher occupation $\mathrm{N} > 0.5$. This displays the dependence of the Kondo temperature on the dot energy. The Kondo temperature rises as the dot energy gets close to the leads. However, the Kondo temperature also depends on the coupling strength between the quantum dot and leads (Eq.~\ref{eq:kondo_temp}). As strongly coupled quantum dots have larger Kondo temperatures, the conductance maximum is expected to occur at higher occupation than in weakly coupled quantum dots. 
+
 \begin{figure}[!hbt]
  \begin{center}
 %% includegraphics: comment the following if not using the graphicx package
@@ -113,10 +129,6 @@ Plotting conductance versus occupation overcomes the issue of conductance shifti
  Conductance versus occupation in a weak (green) and strong (blue) coupling regime. Each trace is taken at \qty{20}{mK}. The coupling strength $\mathrm{\Gamma/k_BT}$ was determined from a global fit to multiple temperatures. The NRG (grey) conductance versus occupation corresponding to the determined $\mathrm{\Gamma/k_BT}$ is plotted on top of the data. Good agreement is found at each coupling strength.}
  \end{center}
 \end{figure}
-
-
-In Fig.~\ref{fig:ch3/cond_vs_occ_gf}\textbf{b}, the Kondo enhancement dependence on the system's temperature was confirmed. At high temperatures $\mathrm{T>T_K}$, there is no Kondo singlet, and so the conductance maximum is near $\mathrm{N} = 0.5$. But at low temperatures $\mathrm{T<T_K}$, a Kondo singlet is formed, and the conductance maximum shifts to higher occupation $\mathrm{N} > 0.5$. This displays the dependence of the Kondo temperature on the dot energy. The Kondo temperature rises as the dot energy gets close to the leads. However, the Kondo temperature also depends on the coupling strength between the quantum dot and leads (Eq.~\ref{eq:kondo_temp}). As strongly coupled quantum dots have larger Kondo temperatures, the conductance maximum is expected to occur at higher occupation than in weakly coupled quantum dots. 
-
 
 
 Figure~\ref{fig:ch3/cond_occ_couplingstrength} shows \qty{20}{mK} traces of conductance versus occupation at three different coupling strengths. $\mathrm{\Gamma/k_BT}$ is determined using the fitting routine described previously and is used to plot the corresponding NRG alongside the data. Expectedly, the more strongly coupled data shows a greater shift in the conductance maximum to higher occupation. Good agreement with NRG is observed at each coupling.
@@ -138,6 +150,25 @@ This new method of plotting conductance versus occupation not only requires a re
 \subsection{Varying Charge Transition}
 
 
+% \begin{figure}[!bht]
+%  \begin{center}
+% %% includegraphics: comment the following if not using the graphicx package
+%  \includegraphics[width=0.85\textwidth]{figures/ch3/figure16.pdf}
+%  \caption[Varying Charge Sensor Current Setpoint]{\label{fig:ch3/cond_occ_ct_set-points} 
+%  % For some options that work with pdf\LaTeX, please see this discussion:
+%  % \url{http://tex.stackexchange.com/questions/11839}. 
+%  Current through the charge sensor (green) from pinch-off to the start of the first conductance plateau. Corresponding charge transition (yellow) at each current setpoint through the charge sensor. Note the x-axis is different between the underlying charge sensor trace and charge transitions. The charge transitions x-axis has been scaled the same amount for clarity. The charge transitions vary dramatically as the current through the charge sensor is changed. The left and right slopes curve upwards, downwards, in the same direction, or opposite each other.}
+%  \end{center}
+% \end{figure}
+% \FloatBarrier
+
+
+Figure~\ref{fig:ch3/cond_occ_ct_set-points} shows a charge sensor trace (green) and the resulting charge transition (yellow) at a range of current setpoints through the charge sensor. The current (y-axis) has not been scaled differently between the charge sensor trace and charge transitions. However, the sweep gate (x-axis) of the charge sensor and charge transitions are different. The charge transition sweep gate axis has been scaled for clarity. 
+
+
+
+The shape of the charge transition varies significantly as the current setpoint through the charge sensor changes. Typically, the charge sensor is set to its steepest slope where the derivative is the largest. Here, the charge sensor is most sensitive as small changes in the potential result in large changes in the current and the resulting amplitude of the charge transition is greatest. However, charge transitions can be measured at any current setpoint through the charge sensor. As long as the change in current through the charge sensor is linear with respect to the change in voltage. This can be achieved with a virtual gate, which keeps the current through the charge sensor constant. Yet, at each charge sensor current setpoint, the charge transition slopes vary differently on the unoccupied and occupied sides. Comparing the slopes on the unoccupied (left) side, at low currents, they point downwards, then point upwards with increasing current, and then point downwards again at the highest current setpoint. It is important to show that the conduction versus occupation agrees with NRG, irrespective of the current setpoint through the charge sensor. Otherwise, it may be possible to `pick' a current setpoint through the charges sensor that either shows or does not show agreement with NRG. This would render the method unreliable. 
+
 \begin{figure}[!bht]
  \begin{center}
 %% includegraphics: comment the following if not using the graphicx package
@@ -148,16 +179,6 @@ This new method of plotting conductance versus occupation not only requires a re
  Current through the charge sensor (green) from pinch-off to the start of the first conductance plateau. Corresponding charge transition (yellow) at each current setpoint through the charge sensor. Note the x-axis is different between the underlying charge sensor trace and charge transitions. The charge transitions x-axis has been scaled the same amount for clarity. The charge transitions vary dramatically as the current through the charge sensor is changed. The left and right slopes curve upwards, downwards, in the same direction, or opposite each other.}
  \end{center}
 \end{figure}
-% \FloatBarrier
-
-
-Figure~\ref{fig:ch3/cond_occ_ct_set-points} shows a charge sensor trace (green) and the resulting charge transition (yellow) at a range of current setpoints through the charge sensor. The current (y-axis) has not been scaled differently between the charge sensor trace and charge transitions. However, the sweep gate (x-axis) of the charge sensor and charge transitions are different. The charge transition sweep gate axis has been scaled for clarity. 
-
-
-
-The shape of the charge transition varies significantly as the current setpoint through the charge sensor changes. Typically, the charge sensor is set to its steepest slope where the derivative is the largest. Here, the charge sensor is most sensitive as small changes in the potential result in large changes in the current and the resulting amplitude of the charge transition is greatest. However, charge transitions can be measured at any current setpoint through the charge sensor. As long as the change in current through the charge sensor is linear with respect to the change in voltage. This can be achieved with a virtual gate, which keeps the current through the charge sensor constant. Yet, at each charge sensor current setpoint, the charge transition slopes vary differently on the unoccupied and occupied sides. Comparing the slopes on the unoccupied (left) side, at low currents, they point downwards, then point upwards with increasing current, and then point downwards again at the highest current setpoint. It is important to show that the conduction versus occupation agrees with NRG, irrespective of the current setpoint through the charge sensor. Otherwise, it may be possible to `pick' a current setpoint through the charges sensor that either shows or does not show agreement with NRG. This would render the method unreliable. 
-
-
 
 
 \subsection{Conductance versus Occupation}
@@ -215,8 +236,7 @@ To vary the coupling symmetry in a quantum dot, a 2D scan measuring the conducta
 
 Charge transitions were simultaneously measured so that conductance versus occupation could be compared with the corresponding NRG. 
 Charge transitions for each coupling setpoint were measured with $\sim\qty{0.4}{nA}$ through the charge sensor (Fig.~\ref{fig:ch3/symmetry_picking}\textbf{b}). 
-Each charge transition did not have charge jumps near the transition and was deemed a reliable measure of the occupation. Interestingly, the asymmetrically coupled transition (green) is more broadened than the symmetrically coupled transition (pink). $\mathrm{\Gamma/k_BT}$ determined from the global fit to conductance varied from 20.5 for symmetric coupling to 26.0 for asymmetric coupling. However, a global fit to the charge transitions finds 19.6 for symmetric coupling and 45.0 for asymmetric coupling (Table~\ref{tab:sym_coupling_gf}). 
-% \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+Each charge transition did not have charge jumps near the transition and was deemed a reliable measure of the occupation. Interestingly, the asymmetrically coupled transition (green) is more broadened than the symmetrically coupled transition (pink). $\mathrm{\Gamma/k_BT}$ determined from the global fit to conductance varied from 20.5 for symmetric coupling to 26.0 for asymmetric coupling. However, a global fit to the charge transitions finds 19.6 for symmetric coupling and 45.0 for asymmetric coupling (Table~\ref{tab:sym_coupling_gf}). This discrepancy between the $\mathrm{\Gamma/k_BT}$ value determined from the global fits to conductance and charge transitions is surprising. Conversations with our theorist collaborators suggest that NRG only depends on the overall $\Gamma$, and not the ratio between $\Gamma_\mathrm{L}$ and $\Gamma_\mathrm{R}$.
 
 \begin{table}[!hbt] 
 \centering
@@ -242,6 +262,10 @@ Each charge transition did not have charge jumps near the transition and was dee
 
 
 
+
+Figure~\ref{fig:ch3/cond_occ_assymetry}\textbf{a} shows conductance versus occupation taken at \qty{20}{mK} at the four different ratios of coupling symmetry found in Fig.~\ref{fig:ch3/symmetry_picking}\textbf{a}. There is good agreement with NRG in the symmetric coupling (pink). However, as the coupling becomes more asymmetric, the conductance amplitude decreases (Eq.~\ref{eq:cond_amp_strong}), and agreement with NRG is difficult to determine. Hence, for clarity, Fig.~\ref{fig:ch3/cond_occ_assymetry}\textbf{b} shows the same data with an added scaled and offset. The corresponding NRG was also scaled and offset the same as the data. A disagreement between asymmetric coupling (green) data and NRG becomes much clearer. When asymmetrically coupled, the conductance maximum of the data is shifted to the right of the NRG. This suggests the $\mathrm{\Gamma/k_BT}$ determined from the global fit to conductance is lower than expected. This discrepancy with NRG is surprising as conversations with our theorist collaborators suggest that NRG only depends on the overall $\Gamma$, and not the ratio between $\Gamma_\mathrm{L}$ and $\Gamma_\mathrm{R}$.
+
+
 \begin{figure}[!bht]
  \begin{center}
 %% includegraphics: comment the following if not using the graphicx package
@@ -255,13 +279,8 @@ Each charge transition did not have charge jumps near the transition and was dee
 \end{figure}
 
 
-Figure~\ref{fig:ch3/cond_occ_assymetry}\textbf{a} shows conductance versus occupation taken at \qty{20}{mK} at the four different ratios of coupling symmetry found in Fig.~\ref{fig:ch3/symmetry_picking}\textbf{a}. There is good agreement with NRG in the symmetric coupling (pink). However, as the coupling becomes more asymmetric, the conductance amplitude decreases (Eq.~\ref{eq:cond_amp_strong}), and agreement with NRG is difficult to determine. Hence, for clarity, Fig.~\ref{fig:ch3/cond_occ_assymetry}\textbf{b} shows the same data with an added scaled and offset. The corresponding NRG was also scaled and offset the same as the data. A disagreement between asymmetric coupling (green) data and NRG becomes much clearer. When asymmetrically coupled, the conductance maximum of the data is shifted to the right of the NRG. This suggests the $\mathrm{\Gamma/k_BT}$ determined from the global fit to conductance is lower than expected. 
-
-
-
-This discrepancy with NRG is surprising as conversations with our theorist collaborators suggest that NRG only depends on the overall $\Gamma$, and not the ratio between $\Gamma_\mathrm{L}$ and $\Gamma_\mathrm{R}$.
-Perhaps some mechanism could be altering the shape or location of the conductance. 
-Previous experiments have used a charge sensor as a noise source to de-phase the Kondo singlet~\cite{kondo_controlled_dephasing}. In these studies, the bias across the charge sensor was \qty{1200}{\micro V}, twelve times the bias that is used for the charge sensor in this thesis (\qty{100}{\micro V}) and the suppression of the measured conductance was $\sim6\%$. 
+% Perhaps some mechanism could be altering the shape or location of the conductance. 
+Previous experiments have investigated the use of a charge sensor as a noise source to de-phase the Kondo singlet~\cite{kondo_controlled_dephasing}. In these studies, the bias across the charge sensor was \qty{1200}{\micro V}, twelve times the bias that is used for the charge sensor in this thesis (\qty{100}{\micro V}) and the suppression of the measured conductance was $\sim6\%$. 
 A more recent theoretical study found that for weak coupling between the charge sensor and quantum dot, the spectral weight of the Kondo resonance is reduced, leading to a suppression of the conductance. However, the width of the resonance is not affected, suggesting the absence of dephasing~\cite{peculiar_dephasing_of_kondo}. Although this de-phasing mechanism could result in the conductance maximum being shifted to a lower occupation, it would not explain a shift to a higher occupation or the dependence on symmetric coupling.
 
 
@@ -271,10 +290,10 @@ Numerous studies have investigated the tunnelling rates onto and off the quantum
 An early study on the shape of the charge transition with symmetric coupling found that in the absence of a magnetic field, charge transitions are unaffected by the onset of Kondo correlations~\cite{Sprinzak2002}. It was argued that the conductance enhancement between Coulomb peaks results from a larger number of electrons traversing the quantum dot, each dwelling there for a shorter time. However, coupling symmetry was not explored in this experiment. 
 
 
- The most promising insight comes from very recent theoretical studies of the differential conductance through a quantum dot and its dependence on asymmetry in the tunnel barriers and source-drain bias~\cite{Tsutsumi2021,kondo_nrg_asymmetric}. 
- It was found that higher-order corrections to the differential conductance include non-linear terms that depend strongly on the tunnelling and bias asymmetries. To qualitatively explain how this might occur, for $\Gamma_\mathrm{L}>\Gamma_\mathrm{R}$, the number of electrons entering the quantum dot from the left side becomes larger than the number of electrons leaving the right side. Therefore, the number of electrons in the dot increases and the repulsive interaction increases $\tilde{\epsilon}_0$. In contrast, $\tilde{\epsilon}_0$ would decrease for $\Gamma_\mathrm{L}<\Gamma_\mathrm{R}$. This modification to $\tilde{\epsilon}_0$ can result in increased or decreased conductance. 
+An interesting insight comes from very recent theoretical studies of the differential conductance through a quantum dot and its dependence on asymmetry in the tunnel barriers and source-drain bias~\cite{Tsutsumi2021,kondo_nrg_asymmetric}. 
+It was found that higher-order corrections to the differential conductance include non-linear terms that depend strongly on the tunnelling and bias asymmetries. To qualitatively explain how this might occur, for $\Gamma_\mathrm{L}>\Gamma_\mathrm{R}$, the number of electrons entering the quantum dot from the left side becomes larger than the number of electrons leaving the right side. Therefore, the number of electrons in the dot increases and the repulsive interaction increases $\tilde{\epsilon}_0$. In contrast, $\tilde{\epsilon}_0$ would decrease for $\Gamma_\mathrm{L}<\Gamma_\mathrm{R}$. This modification to $\tilde{\epsilon}_0$ can result in increased or decreased conductance. However, corrections to the differential conductance require an applied bias across the quantum dot. Although \qty{1}{\micro V} bias is applied across the dot, we consider this effectively zero bias as it is much smaller than the thermal broadening. 
 
-It should be noted that the exploration of symmetric coupling in this thesis only came from two overnight measurements in a single cooldown and a second cooldown is required to verify the findings. Additionally, a subsequent cooldown would allow for a more focused exploration of tunnel coupling and bias symmetry. 
+It should be noted that the exploration of coupling symmetry in this thesis only came from two overnight measurements in a single cooldown and a second cooldown is required to verify the findings. Additionally, a subsequent cooldown would allow for a more focused exploration of tunnel coupling and bias symmetry. 
  
 
 
