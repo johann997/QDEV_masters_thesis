@@ -1,6 +1,15 @@
  # QDEV_masters_thesis
  A standalone repository which includes the data and code used to build the figures, and .tex files to create the thesis. 
 
+### Workflow
+**LaTeX** was written in [Overleaf](https://www.overleaf.com) using the [UBC thesis template](https://www.overleaf.com/latex/templates/university-of-british-columbia-thesis-template/rnqmyghyfvvp).
+
+Commits were pushed to the repo with the command ```git pull overleaf master --allow-unrelated-histories --rebase=falsez```.
+
+**Plots** were made in **IGOR** and then organised in **Keynote**. 
+
+The Keynote was saved as a .pdf and automatically cropped with [pdfresizer](https://pdfresizer.com) and then split with [smallpdf](
+https://smallpdf.com).
 
 ---
 
@@ -22,7 +31,6 @@ Here are a few pretty pictures to get you interested in reading the thesis. :)
 |---------|---------|
 | ![Figure 1](figures/ch1/figure1.png) | ![Figure 2](figures/ch1/figure3.png) |
 |(a) Photograph of the Au-plated cold plates within a dilution refrigerator. The lowest plate, known as the mixing chamber, can reach temperatures of 8 mK. (b) Photograph of the Si chip carrier, onto which the heterostructure is attached. (c) An optical microscope image shows the heterostructure attached to the chip carrier. Thin Al wire bonds connect the quantum device to the fridge wires. (d) Optical microscope image of a single mesa on the heterostructure. A mesa is an isolated area of the heterostructure where new designs are fabricated. The black lines around the outside are wire bonds and the bright Au are thick (100 nm) ‘outer gates’ which connect to thin (10 nm) ‘inner gates’. (e) Scanning electron micrograph (SEM) of the inner gates. The mean free path of the electrons is of order 3 μm. (f ) SEM image of the quantum dot. An isolated puddle of electrons with a total occupation between 0 and 10 is engineered by carefully tuning the voltages on the inner gates.|(a) Graphic representation from a top-down view of a quantum point contact (QPC). The gold fingers are the metallic gates to which negative voltages can be applied. The grey is where the electrons in the 2DEG can go, depending on the negative voltage applied to the gates. The crossed squares are ohmic contacts to the 2DEG. These contacts allow a bias across the QPC to be applied, so a conductance through the QPC can be measured. (b) Simulation of the electric potential the electrons see in the 2DEG due to the negative voltage applied to the gates. With sufficient negative voltages applied to the gates, the electrons cannot overcome the potential barrier under the gate and flow between the gates. (c) Measurement shows the quantised conductance through a QPC as the voltage on G1 becomes more negative. At sufficiently negative voltages, the potential barrier between the gates is large enough that a measurement will not record any tunnelling events, and the conductance is zero. The pinch-off is shifted from a more negative (green) to a less negative (yellow) value by increasing the negative voltage applied to G2.|
-
 
 
 ---
