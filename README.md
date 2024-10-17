@@ -14,6 +14,12 @@ Commits were pushed to the repo with the command ```git pull overleaf master --a
 The Keynote was saved as a .pdf and automatically cropped with [pdfresizer](https://pdfresizer.com) and then split with [smallpdf](
 https://smallpdf.com).
 
+
+### Notes
+- I used a tool from DavidMathLogic to ensure my colour palette for categorical variables was [colour blind compatible](https://davidmathlogic.com/colorblind/#%23000000-%23E69F00-%2356B4E9-%23009E73-%23F0E442-%230072B2-%23D55E00-%23CC79A7)
+- For continuous variables I used [Kenneth Mooreland's blog](https://www.kennethmoreland.com/color-advice/#fast!) to determine a palette. 
+
+
 ---
 
 ---
