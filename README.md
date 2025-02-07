@@ -1,5 +1,8 @@
  # QDEV_masters_thesis
- A standalone repository which includes the data and code used to build the figures, and .tex files to create the thesis. 
+Sidenote: Here is a [video](https://www.linkedin.com/feed/update/urn:li:activity:7293689029705756672/) I posted to LinkedIn highlighting my time in the lab
+
+
+A standalone repository which includes the data and code used to build the figures, and .tex files to create the thesis. 
  
 The .pdf is included but here is a link to the [published thesis](https://open.library.ubc.ca/soa/cIRcle/collections/ubctheses/24/items/1.0441986) in UBC's online repository.
 
